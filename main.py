@@ -1,41 +1,24 @@
 
 import os
-
-
 import pandas as pd
-
-
 import numpy as np
-
-
 import matplotlib.pyplot as plt
-
-
 from sklearn.model_selection import train_test_split
-
 # 导入随机森林回归模型，用于做订单量预测
 from sklearn.ensemble import RandomForestRegressor
-
 # 导入模型评估指标，计算预测误差（MAE平均绝对误差、RMSE均方根误差）
 from sklearn.metrics import mean_absolute_error, mean_squared_error
-
-
 # 导入警告管理库，用于关闭不必要的系统提示
 import warnings
-
 # 关闭所有警告信息，让控制台输出干净整洁
 warnings.filterwarnings("ignore")
-
 # 设置matplotlib使用默认英文字体，彻底避免中文乱码/字体警告
 plt.rcParams["font.family"] = ["DejaVu Sans"]
-
 # 设置负号正常显示，防止图表中负号变成方框
 plt.rcParams["axes.unicode_minus"] = False
-
 # 自动创建 outputs 文件夹，用于保存生成的图表
 # exist_ok=True 表示如果文件夹已存在则不报错
 os.makedirs("outputs", exist_ok=True)
-
 # M1 数据处理模块
 def m1_data_process():
     """
